@@ -1,8 +1,5 @@
-const colors = ["bg-red-500", "bg-blue-500", "bg-green-500", "bg-yellow-500", "bg-purple-500"];
-        let currentIndex = 0;
-
-        document.getElementById("theme-btn").addEventListener("click", function() {
-            document.body.classList.remove(...colors);
-            document.body.classList.add(colors[currentIndex]);
-            currentIndex = (currentIndex + 1) % colors.length;
+document.getElementById("theme-btn").addEventListener("click", function() {
+            let randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
+            document.body.style.backgroundColor = randomColor;
+            document.getElementById("colorCode").textContent = "Color: " + randomColor;
         });
